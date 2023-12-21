@@ -1,3 +1,4 @@
 FROM openjdk:8
-ADD jarstaging/com/valaxy/demo-workshop/2.1.4/demo-workshop-2.1.4.jar ttrend.jar 
-ENTRYPOINT [ "java", "-jar", "ttrend.jar" ]
+COPY  target/demo-workshop-2.1.4.jar /usr/src/myapp
+WORKDIR /usr/src/myapp
+ENTRYPOINT [ "java", "-jar", "demo-workshop-2.1.4.jar" ]
